@@ -13,7 +13,7 @@ from werkzeug.utils import secure_filename
 def contact_via_whatsapp(travel_id):
     travel = Travel.query.get(travel_id)
     if travel:
-        phone_number = "091128630668"  # Replace with your desired WhatsApp number
+        phone_number = "08169625345"  # Replace with your desired WhatsApp number
         message = f"Hello, I'm interested in the travel to {{travel.location}} with a price of {{travel.price}}."
         params = {
             'phone': phone_number,
