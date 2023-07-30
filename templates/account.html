@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>{{user.fullname}} | Account 😁 </title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="AI powered trading" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="/static/admin/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="/static/admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="/static/admin/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="/static/admin/css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container-fluid position-relative bg-white d-flex p-0">
+            <!-- Spinner Start -->
+            <div id="spinner"
+                class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <!-- Spinner End -->
+
+
+            <!-- Sidebar Start -->
+            <div class="sidebar pe-4 pb-3">
+                <nav class="navbar bg-light navbar-light">
+                    <a href="/" class="navbar-brand mx-4 mb-3">
+                        <h3 class="text-primary"><i class="fa fa-dollar-sign me-2"></i>digitexai</h3>
+                    </a>
+                    <div class="d-flex align-items-center ms-4 mb-4">
+                        <div class="position-relative">
+                            <img class="rounded-circle" src="/static/user.jpeg" alt=""
+                                style="width: 40px; height: 40px;">
+                            <div
+                                class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h6 class="mb-0">{{user.fullname}} ✅</h6>
+                            <span>Crypto Boss</span>
+                        </div>
+                    </div>
+                    <div class="navbar-nav w-100">
+                        <a href="#" class="nav-item nav-link active"><i
+                                class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                        <a href="/deposit/{{user.id}}" class="nav-item nav-link active"><i
+                                class="fa fa-dollar-sign"></i>Deposit</a>
+                        <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="button.html" class="dropdown-item">Buttons</a>
+                            <a href="typography.html" class="dropdown-item">Typography</a>
+                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                        </div>
+                    </div> -->
+                        <!-- <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
+                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a> -->
+                        <!-- <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="signin.html" class="dropdown-item">Sign In</a>
+                            <a href="signup.html" class="dropdown-item">Sign Up</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="blank.html" class="dropdown-item">Blank Page</a>
+                        </div>
+                    </div> -->
+                    </div>
+                </nav>
+            </div>
+            <!-- Sidebar End -->
+
+
+            <!-- Content Start -->
+            <div class="content">
+                <!-- Navbar Start -->
+                <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                    <a href="#" class="navbar-brand d-flex d-lg-none me-4">
+                        <h2 class="text-primary mb-0"><i class="fa fa-dollar-sign me-2"></i></h2>
+                    </a>
+                    <a href="#" class="sidebar-toggler flex-shrink-0">
+                        <i class="fa fa-bars"></i>
+                    </a>
+
+                    <div class="navbar-nav align-items-center ms-auto">
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <i class="fa fa-bell me-lg-2"></i>
+                                <span class="d-none d-lg-inline-flex">Notifications</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                                {% for notice in notifications %}
+                                <a href="#" class="dropdown-item">
+                                    <h6 class="fw-normal mb-0">
+                                        <b>{{ notice.message }}</b>
+                                    </h6>
+                                    <small>{{ notice.created.strftime('%B %d, %Y %H:%M:%S') }}</small>
+                                </a>
+                                {% endfor %}
+                                <hr class="dropdown-divider">
+
+
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                <img class="rounded-circle me-lg-2" src="/static/user.jpeg" alt=""
+                                    style="width: 40px; height: 40px;">
+                                <span class="d-none d-lg-inline-flex">{{user.fullname}}</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                                <a href="#" class="dropdown-item">My Profile</a>
+
+                                <a href="/logout" class="dropdown-item">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Navbar End -->
+
+
+
+
+                <!-- Sale & Revenue Start -->
+                <div class="container-fluid pt-4 px-4">
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 col-lg-12">
+                            <div class=" overflow-hidden bg-transparent card-crypto-scroll shadow-none">
+                                <div class="js-conveyor-example jctkr-wrapper jctkr-initialized">
+                                    <!-- TradingView Widget BEGIN -->
+                                    <div class="tradingview-widget-container">
+                                        <div class="tradingview-widget-container__widget"></div>
+                                        <script type="text/javascript"
+                                            src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+                                            async>
+                                                {
+                                                    "symbols";[
+                                                        {
+                                                            "proName": "FOREXCOM:SPXUSD",
+                                                            "title": "S&P 500"
+                                                        },
+                                                        {
+                                                            "proName": "FOREXCOM:NSXUSD",
+                                                            "title": "Nasdaq 100"
+                                                        },
+                                                        {
+                                                            "proName": "FX_IDC:EURUSD",
+                                                            "title": "EUR/USD"
+                                                        },
+                                                        {
+                                                            "proName": "BITSTAMP:BTCUSD",
+                                                            "title": "BTC/USD"
+                                                        },
+                                                        {
+                                                            "proName": "BITSTAMP:ETHUSD",
+                                                            "title": "ETH/USD"
+                                                        }
+                                                    ],
+
+                                                        "colorTheme"; "dark",
+                                                            "isTransparent"; false,
+                                                                "displayMode"; "compact",
+                                                                    "locale"; "en"
+                                                }
+
+                                            </script>
+                                    </div>
+                                    <!-- TradingView Widget END -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="row g-4">
+
+
+
+                        <div class="col-lg-12">
+                            <div class="card card-bitcoin">
+                                <div style="height:350px;">
+                                    <div id="tradingview_b766a-wrapper"
+                                        style="position: relative;box-sizing: content-box;width: 100%;height: 100%;margin: 0 auto !important;padding: 0 !important;font-family:Arial,sans-serif;">
+                                        <div
+                                            style="width: 100%;height: 100%;background: transparent;padding: 0 !important;">
+                                            <iframe id="tradingview_b766a"
+                                                src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_b766a&amp;symbol=FX%3AUSDJPY&amp;interval=1&amp;saveimage=1&amp;toolbarbg=4f4f4f&amp;studies=%5B%5D&amp;theme=Dark&amp;style=10&amp;timezone=Etc%2FUTC&amp;studies_overrides=%7B%7D&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=en&amp;utm_source=google.com&amp;utm_medium=widget&amp;utm_campaign=chart&amp;utm_term=FX%3AUSDJPY"
+                                                style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important;"
+                                                frameborder="0" allowtransparency="true" scrolling="no"
+                                                allowfullscreen=""
+                                                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                <i class="fa fa-chart-line fa-3x text-primary"></i>
+                                <div class="ms-3">
+                                    <p class="mb-2">Account Balance</p>
+
+                                    {% if transaction.amount %}
+                                    {% if main_bal %}
+
+                                    <h6 class="mb-0"> ${{main_bal}} </h6>
+                                    {% else %}
+                                    <h6 class="mb-0"> Pending Confirmation ⏳
+                                        <div class="spinner-border text-primary" style="width: 1rem; height: 1rem;"
+                                            role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    </h6>
+
+                                    {% endif %}
+
+
+
+                                    {% else %}
+                                    <a href="/deposit/{{user.id}}">
+                                    <h6 class="mb-0"> Deposit some funds to begin AI trading </h6>
+
+                                    </a>
+                                    
+                                    {% endif %}
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                                <div class="ms-3">
+                                    <p class="mb-2">ROI</p>
+                                    {% if total_profit %}
+                                    <h6 class="mb-0">${{total_profit}}</h6>
+                                    {% else %}
+                                      <a href="/deposit/{{user.id}}">
+                                    <h6 class="mb-0">Waiting on deposit to trade funds </h6></a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                <i class="fa fa-chart-area fa-3x text-primary"></i>
+                                <div class="ms-3">
+                                    <p class="mb-2">Capital Invested</p>
+                                     {% if total %}
+                                    <h6 class="mb-0">${{total}}</h6>
+                                    {% else %}
+                                     <h6 class="mb-0">No Capital invested at the moment </h6>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                         {% if net_balance %}
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                                <div class="ms-3">
+                                    <p class="mb-2">Net Balance</p>
+                                   
+                                    <h6 class="mb-0">$ {{ net_balance }}</h6>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                                    {% else %}
+                             <div class="col-sm-6 col-xl-3">
+                            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                                <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                                <div class="ms-3">
+                                    <p class="mb-2">Net Balance</p>
+                                   
+                                    <h6 class="mb-0"> Net Balance will be displayed here</h6>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                                    {% endif %}
+
+                    </div>
+                </div>
+                <!-- Sale & Revenue End -->
+
+
+                <!-- Sales Chart Start -->
+                <!-- <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Worldwide Sales</h6>
+                                <a href="">Show All</a>
+                            </div>
+                            <canvas id="worldwide-sales"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Salse & Revenue</h6>
+                                <a href="">Show All</a>
+                            </div>
+                            <canvas id="salse-revenue"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+                <!-- Sales Chart End -->
+
+
+                <!-- Recent Sales Start -->
+                <div class="container-fluid pt-4 px-4">
+
+
+
+
+
+
+                    <div class="row row-sm">
+                        <div class="col-xl-4 col-lg-6 col-md-12" style="margin-bottom: 20px;">
+                            <div
+                                style="height:125px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px; width: 100%;">
+                                <div style="height:240px; padding:0px; margin:0px; width: 100%; "><iframe
+                                        src="https://widget.coinlib.io/widget?type=chart&amp;theme=dark&amp;coin_id=859&amp;pref_coin_id=1505"
+                                        width="100%" height="636px" scrolling="none" marginwidth="0" marginheight="0"
+                                        frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"
+                                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-12" style="margin-bottom: 20px;">
+                            <div
+                                style="height:125px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px; width: 100%;">
+                                <div style="height:240px; padding:0px; margin:0px; width: 100%;"><iframe
+                                        src="https://widget.coinlib.io/widget?type=chart&amp;theme=dark&amp;coin_id=145&amp;pref_coin_id=1505"
+                                        width="100%" height="636px" scrolling="auto" marginwidth="0" marginheight="0"
+                                        frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"
+                                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-12 col-md-12" style="margin-bottom: 20px;">
+                            <div
+                                style="height:125px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px; width: 100%;">
+                                <div style="height:240px; padding:0px; margin:0px; width: 100%;"><iframe
+                                        src="https://widget.coinlib.io/widget?type=chart&amp;theme=dark&amp;coin_id=359&amp;pref_coin_id=1505"
+                                        width="100%" height="636px" scrolling="auto" marginwidth="0" marginheight="0"
+                                        frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"
+                                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="bg-light text-center rounded p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <h6 class="mb-0">Recent Transactions</h6>
+
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                <thead>
+                                    <tr class="text-dark">
+                                        <th scope="col">Transaction ID</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Amount</th>
+                                        <th scope="col">Customer</th>
+                                        <th scope="col">Status</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for transaction in transactions%}
+                                    <tr>
+                                        <td>{{transaction.id}}btx{{transaction.id}}134trxbtc{{transaction.id}}h{{transaction.amount  | round }}bu6 </td>
+                                        <td>{{transaction.created}}</td>
+                                        <td>${{transaction.amount}}</td>
+                                        <td>{{user.fullname}}</td>
+                                       
+                                        {% if transaction.status == 'confirm' %}
+                                        <td style="color: green;">{{transaction.status}} <i class="fa fa-check"></i>
+                                        </td>
+                                        {% else %}
+                                        <td>{{transaction.status}}
+
+                                            <div class="spinner-border text-primary" style="width: 1rem; height: 1rem;"
+                                                role="status">
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+
+                                        </td>
+                                        {% endif %}
+                                        <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent Sales End -->
+
+
+
+                <!-- Recent Sales Start -->
+                <div class="container-fluid pt-4 px-4">
+                    <div class="bg-light text-center rounded p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <h6 class="mb-0">Recent Trades</h6>
+
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                <thead>
+                                    <tr class="text-dark">
+                                        <th scope="col"></th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Amount</th>
+                                        <th scope="col">Asset</th>
+                                        <th scope="col">Outcome</th>
+                                        <th scope="col">Status</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for trade in trades%}
+                                    <tr>
+                                        <td>{{trade.id}}</td>
+                                        <td>{{trade.created}}</td>
+                                        <td>${{trade.amount}}</td>
+                                        <td>{{trade.asset}}</td>
+                                        <td>{{trade.outcome}}</td>
+                                        {% if trade.status == 'buy' %}
+                                        <td style="color: green;">{{trade.status}} <i class="fa fa-angle-down"></i></td>
+                                        {% else %}
+                                        <td style="color: red;">{{trade.status}}
+
+                                            <i class="fa fa-angle-up"></i>
+
+                                        </td>
+                                        {% endif %}
+                                        <!-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> -->
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent Sales End -->
+
+
+
+
+                <!-- Widgets Start -->
+                <!-- <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-md-6 col-xl-4">
+                        <div class="h-100 bg-light rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="mb-0">Messages</h6>
+                                <a href="">Show All</a>
+                            </div>
+                            <div class="d-flex align-items-center border-bottom py-3">
+                                <img class="rounded-circle flex-shrink-0" src="/static/user.jpeg" alt="" style="width: 40px; height: 40px;">
+                                <div class="w-100 ms-3">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-0">{{user.fullname}}</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                    <span>Short message goes here...</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center border-bottom py-3">
+                                <img class="rounded-circle flex-shrink-0" src="/static/user.jpeg" alt="" style="width: 40px; height: 40px;">
+                                <div class="w-100 ms-3">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-0">{{user.fullname}}</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                    <span>Short message goes here...</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center border-bottom py-3">
+                                <img class="rounded-circle flex-shrink-0" src="/static/user.jpeg" alt="" style="width: 40px; height: 40px;">
+                                <div class="w-100 ms-3">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-0">{{user.fullname}}</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                    <span>Short message goes here...</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center pt-3">
+                                <img class="rounded-circle flex-shrink-0" src="/static/user.jpeg" alt="" style="width: 40px; height: 40px;">
+                                <div class="w-100 ms-3">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-0">{{user.fullname}}</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                    <span>Short message goes here...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-xl-4">
+                        <div class="h-100 bg-light rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Calender</h6>
+                                <a href="">Show All</a>
+                            </div>
+                            <div id="calender"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-xl-4">
+                        <div class="h-100 bg-light rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">To Do List</h6>
+                                <a href="">Show All</a>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <input class="form-control bg-transparent" type="text" placeholder="Enter task">
+                                <button type="button" class="btn btn-primary ms-2">Add</button>
+                            </div>
+                            <div class="d-flex align-items-center border-bottom py-2">
+                                <input class="form-check-input m-0" type="checkbox">
+                                <div class="w-100 ms-3">
+                                    <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <span>Short task goes here...</span>
+                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center border-bottom py-2">
+                                <input class="form-check-input m-0" type="checkbox">
+                                <div class="w-100 ms-3">
+                                    <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <span>Short task goes here...</span>
+                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center border-bottom py-2">
+                                <input class="form-check-input m-0" type="checkbox" checked>
+                                <div class="w-100 ms-3">
+                                    <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <span><del>Short task goes here...</del></span>
+                                        <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center border-bottom py-2">
+                                <input class="form-check-input m-0" type="checkbox">
+                                <div class="w-100 ms-3">
+                                    <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <span>Short task goes here...</span>
+                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center pt-2">
+                                <input class="form-check-input m-0" type="checkbox">
+                                <div class="w-100 ms-3">
+                                    <div class="d-flex w-100 align-items-center justify-content-between">
+                                        <span>Short task goes here...</span>
+                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+                <!-- Widgets End -->
+
+
+                <!-- Footer Start -->
+                <div class="container-fluid pt-4 px-4">
+                    <div class="bg-light rounded-top p-4">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 text-center text-sm-start">
+                                &copy; <a href="#">crypto</a>, All Right Reserved.
+                            </div>
+                            <div class="col-12 col-sm-6 text-center text-sm-end">
+                                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                                <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer End -->
+            </div>
+            <!-- Content End -->
+
+
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/admin/lib/chart/chart.min.js"></script>
+        <script src="/static/admin/lib/easing/easing.min.js"></script>
+        <script src="/static/admin/lib/waypoints/waypoints.min.js"></script>
+        <script src="/static/admin/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="/static/admin/lib/tempusdominus/js/moment.min.js"></script>
+        <script src="/static/admin/lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="/static/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="/static/admin/js/main.js"></script>
+    </body>
+
+</html>

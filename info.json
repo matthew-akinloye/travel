@@ -1,0 +1,214 @@
+[
+  {
+    "country": "United States of America",
+    "description": "The United States of America is a diverse and vast country, known for its iconic cities like New York, Los Angeles, and Chicago. It offers a wide range of attractions, from stunning national parks like Yellowstone and the Grand Canyon to vibrant cultural scenes and world-class museums.",
+    "info": {
+      "capital": "Washington, D.C.",
+      "population": "Approximately 331 million",
+      "officialLanguage": "English",
+      "currency": "United States Dollar (USD)"
+    }
+  },
+  {
+    "country": "Mexico",
+    "description": "Mexico is a vibrant country located in the heart of North America, known for its rich history, delicious cuisine, and stunning beaches. Visitors can explore ancient Mayan ruins, experience colorful festivals, and indulge in authentic Mexican street food.",
+    "info": {
+      "capital": "Mexico City",
+      "population": "Approximately 129 million",
+      "officialLanguage": "Spanish",
+      "currency": "Mexican Peso (MXN)"
+    }
+  },
+  {
+    "country": "Canada",
+    "description": "Canada is a beautiful country renowned for its breathtaking landscapes, including the Rocky Mountains, Niagara Falls, and vast national parks. It offers a mix of modern cities like Toronto and Vancouver, along with opportunities for outdoor activities like hiking, skiing, and wildlife spotting.",
+    "info": {
+      "capital": "Ottawa",
+      "population": "Approximately 37 million",
+      "officialLanguages": ["English", "French"],
+      "currency": "Canadian Dollar (CAD)"
+    }
+  },
+  {
+    "country": "Sweden",
+    "description": "Sweden is a Scandinavian country known for its stunning natural landscapes, including dense forests, crystal-clear lakes, and picturesque coastal areas. It boasts vibrant cities like Stockholm and Gothenburg, offering a blend of modern architecture, historical sites, and a thriving cultural scene.",
+    "info": {
+      "capital": "Stockholm",
+      "population": "Approximately 10 million",
+      "officialLanguage": "Swedish",
+      "currency": "Swedish Krona (SEK)"
+    }
+  },
+  {
+    "country": "United Kingdom",
+    "description": "The United Kingdom is a fascinating country that encompasses England, Scotland, Wales, and Northern Ireland. It is known for its rich history, iconic landmarks such as Big Ben and Stonehenge, as well as its diverse cultural offerings and renowned universities.",
+    "info": {
+      "capital": "London",
+      "population": "Approximately 66 million",
+      "officialLanguage": "English",
+      "currency": "British Pound (GBP)"
+    }
+  },
+  {
+    "country": "Ireland",
+    "description": "Ireland, also known as the Emerald Isle, is famous for its lush green landscapes, ancient castles, and friendly locals. Visitors can explore vibrant cities like Dublin, experience traditional Irish music and dance, and discover the country's rich Celtic heritage.",
+    "info": {
+      "capital": "Dublin",
+      "population": "Approximately 5 million",
+      "officialLanguage": "Irish, English",
+      "currency": "Euro (EUR)"
+    }
+  },
+  {
+    "country": "Belgium",
+    "description": "Belgium is a small but culturally rich country in Western Europe. It is known for its medieval towns, stunning architecture, delicious chocolates, and famous beers. Visitors can explore cities like Brussels, Bruges, and Ghent, and indulge in the country's culinary delights.",
+    "info": {
+      "capital": "Brussels",
+      "population": "Approximately 11.5 million",
+      "officialLanguages": ["Dutch", "French", "German"],
+      "currency": "Euro (EUR)"
+    }
+  },
+  {
+    "country": "Germany",
+    "description": "Germany is a diverse and vibrant country in Central Europe, known for its rich history, stunning landscapes, and world-renowned engineering and automotive industries. Visitors can explore historical cities like Berlin and Munich, admire the fairytale castles along the Rhine, and enjoy the country's famous beer festivals.",
+    "info": {
+      "capital": "Berlin",
+      "population": "Approximately 83 million",
+      "officialLanguage": "German",
+      "currency": "Euro (EUR)"
+    }
+  },
+  {
+    "country": "Finland",
+    "description": "Finland, also known as the Land of a Thousand Lakes, is a Nordic country known for its pristine natural beauty, including vast forests, lakes, and the magical Northern Lights. Visitors can experience Finnish sauna culture, explore the vibrant capital Helsinki, and enjoy outdoor activities like skiing and hiking.",
+    "info": {
+      "capital": "Helsinki",
+      "population": "Approximately 5.5 million",
+      "officialLanguage": "Finnish, Swedish",
+      "currency": "Euro (EUR)"
+    }
+  },
+  {
+    "country": "South Africa",
+    "description": "South Africa is a diverse and captivating country located at the southernmost tip of the African continent. It offers stunning landscapes, including iconic Table Mountain, wildlife-rich national parks like Kruger, and beautiful coastal areas. Visitors can explore vibrant cities like Cape Town, experience rich cultural heritage, and go on thrilling safaris.",
+    "info": {
+      "capital": "Pretoria (executive), Cape Town (legislative), Bloemfontein (judicial)",
+      "population": "Approximately 60 million",
+      "officialLanguages": [
+        "Zulu",
+        "Xhosa",
+        "Afrikaans",
+        "English",
+        "Tswana",
+        "Sotho",
+        "Northern Sotho",
+        "Swazi",
+        "Venda",
+        "Tsonga",
+        "Southern Ndebele"
+      ],
+      "currency": "South African Rand (ZAR)"
+    }
+  },
+  {
+    "country": "Tanzania",
+    "description": "Tanzania is a stunning East African country known for its diverse wildlife, breathtaking landscapes, and iconic destinations such as Mount Kilimanjaro and the Serengeti National Park. Visitors can experience thrilling safaris, explore the vibrant culture of Zanzibar, and discover the warmth and hospitality of the Tanzanian people.",
+    "info": {
+      "capital": "Dodoma",
+      "population": "Approximately 61 million",
+      "officialLanguage": "Swahili, English",
+      "currency": "Tanzanian Shilling (TZS)"
+    }
+  },
+  {
+    "country": "Ghana",
+    "description": "Ghana is a vibrant West African country known for its rich history, diverse culture, and stunning natural beauty. Visitors can explore historical sites such as Cape Coast Castle, experience vibrant markets and festivals, and enjoy the country's warm hospitality and delicious cuisine.",
+    "info": {
+      "capital": "Accra",
+      "population": "Approximately 30 million",
+      "officialLanguage": "English",
+      "currency": "Ghanaian Cedi (GHS)"
+    }
+  },
+  {
+    "country": "Uganda",
+    "description": "Uganda, often referred to as the Pearl of Africa, is a landlocked country in East Africa known for its incredible wildlife, including endangered mountain gorillas in Bwindi Impenetrable National Park. Visitors can explore the lush landscapes, go on thrilling safaris, and experience the warm hospitality of the Ugandan people.",
+    "info": {
+      "capital": "Kampala",
+      "population": "Approximately 46 million",
+      "officialLanguage": "English, Swahili",
+      "currency": "Ugandan Shilling (UGX)"
+    }
+  },
+  {
+    "country": "Morocco",
+    "description": "Morocco is a captivating country located in North Africa, known for its vibrant markets, ancient cities, and stunning desert landscapes. Visitors can explore the bustling streets of Marrakech, wander through the historic medinas, and experience the unique blend of Arab, Berber, and European influences.",
+    "info": {
+      "capital": "Rabat",
+      "population": "Approximately 36 million",
+      "officialLanguages": ["Arabic", "Amazigh"],
+      "currency": "Moroccan Dirham (MAD)"
+    }
+  },
+  {
+    "country": "Kenya",
+    "description": "Kenya is a beautiful country located in East Africa, renowned for its abundant wildlife, diverse landscapes, and rich cultural heritage. Visitors can embark on thrilling safari adventures in Maasai Mara National Reserve, relax on the pristine beaches of Mombasa, and explore the vibrant capital city, Nairobi.",
+    "info": {
+      "capital": "Nairobi",
+      "population": "Approximately 53 million",
+      "officialLanguages": ["Swahili", "English"],
+      "currency": "Kenyan Shilling (KES)"
+    }
+  },
+  {
+    "country": "Egypt",
+    "description": "Egypt is a mesmerizing country located in North Africa, known for its ancient history, iconic monuments, and the majestic Nile River. Visitors can explore the Great Pyramids of Giza, cruise along the Nile, and immerse themselves in the vibrant atmosphere of Cairo, the bustling capital.",
+    "info": {
+      "capital": "Cairo",
+      "population": "Approximately 104 million",
+      "officialLanguage": "Arabic",
+      "currency": "Egyptian Pound (EGP)"
+    }
+  },
+  {
+    "country": "U.A.E",
+    "description": "The United Arab Emirates (U.A.E.) is a modern and glamorous country located in the Middle East. Known for its futuristic skyline, luxury shopping, and pristine beaches, it offers a blend of traditional Arabian culture and modern amenities. Visitors can explore iconic landmarks like the Burj Khalifa, indulge in world-class dining, and experience the hospitality of Dubai and Abu Dhabi.",
+    "info": {
+      "capital": "Abu Dhabi",
+      "population": "Approximately 9.9 million",
+      "officialLanguage": "Arabic",
+      "currency": "United Arab Emirates Dirham (AED)"
+    }
+  },
+  {
+    "country": "Qatar",
+    "description": "Qatar is a small but affluent country located on the northeastern coast of the Arabian Peninsula. Known for its modern architecture, luxury hotels, and rich cultural heritage, it offers a unique blend of tradition and innovation. Visitors can explore the vibrant city of Doha, enjoy world-class shopping, and indulge in the country's culinary delights.",
+    "info": {
+      "capital": "Doha",
+      "population": "Approximately 2.7 million",
+      "officialLanguage": "Arabic",
+      "currency": "Qatari Riyal (QAR)"
+    }
+  },
+  {
+    "country": "Oman",
+    "description": "Oman is a breathtaking country located on the southeastern coast of the Arabian Peninsula. It is known for its stunning landscapes, including rugged mountains, pristine beaches, and vast deserts. Visitors can explore historic forts, immerse themselves in the rich Omani culture, and enjoy outdoor activities like dune bashing and snorkeling.",
+    "info": {
+      "capital": "Muscat",
+      "population": "Approximately 5 million",
+      "officialLanguage": "Arabic",
+      "currency": "Omani Rial (OMR)"
+    }
+  },
+  {
+    "country": "Georgia",
+    "description": "Georgia is a charming country nestled between Eastern Europe and Western Asia. It is known for its stunning mountain landscapes, ancient churches, and rich history. Visitors can explore the vibrant capital city of Tbilisi, visit UNESCO World Heritage Sites, and experience Georgian hospitality and cuisine.",
+    "info": {
+      "capital": "Tbilisi",
+      "population": "Approximately 3.7 million",
+      "officialLanguage": "Georgian",
+      "currency": "Georgian Lari (GEL)"
+    }
+  }
+]

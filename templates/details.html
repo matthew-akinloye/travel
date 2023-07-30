@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Labrinth Group</title>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&amp;display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Prata&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/images/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/images/android-chrome-512x512.png">
+        <link rel="icon" type="image/png" href="/static/images/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+        <meta name="msapplication-TileColor" content="#151515">
+        <meta name="theme-color" content="#151515">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+        <style>
+            img{
+                image-rendering: optimizeQuality;
+            }
+            .tour_page_head{
+                height: 70%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="top_panel">
+                <div class="wrap">
+                    <div class="wrap_float">
+
+                        <div class="left">
+
+                            <a href="/" class="logo">
+                                <img style="filter: invert(100%); height: 70px" src="/static/images/logo.png" alt>
+                            </a>
+                        </div>
+                        <div class="menu_wrap" id="menu_wrap">
+                            <div class="scroll">
+                                <div class="center">
+                                    <div class="menu">
+                                        <ul>
+                                            <li><a href="/"><span>Home</span></a></li>
+
+                                        </ul>
+                                        <div class="mobile_content">
+
+                                            <div class="tel">
+                                                <a href="tel:08169625345"> 08169625345</a>
+                                                <a href="tel:+905512693007"><span>905512693007</span></a>
+                                                <a href="tel:+97450848047"><span>97450848047</span></a>
+                                                <p>Round the clock support</p>
+                                            </div>
+                                            <div class="social">
+                  <a href="https://www.facebook.com/p/labrinthconsults-100064268880105/" class="link facebook"><span></span></a>
+                  <a href="https://instagram.com/labrinth.consults?igshid=NTc4MTIwNjQ2YQ==" class="link instagram"><span></span></a>
+                  <a href="https://www.linkedin.com/in/fadejimi-aborisade-84944099" class="link linkedin"><i class="fa fa-linkedin" style="font-size:48px;color:blue"></i></a>
+                  <a href="https://wa.me/08169625345" class="link whatsapp"><i class="fa fa-whatsapp" style="font-size:48px;color:green"></i></a>
+                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="close" id="menu-close">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="tel"><a href="tel:08169625345"><span>08169625345</span></a></div>
+                                    <div class="tel"><a href="tel:+905512693007"><span>+905512693007</span></a></div>
+                                    <div class="tel"><a href="tel:+97450848047"><span>+97450848047</span></a></div>
+
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mobile_btn" id="mobile_btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tour_page right-sidebar">
+                <div class="tour_page_head"  style="background-image: url(/static/uploads/{{travel.image }})">
+                    <div class="breadcrumbs">
+                        <div class="wrap">
+                            <div class="wrap_float">
+                                <a href="#">Home</a>
+                                <span class="separator">{{travel.location}}/Details</span>
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header_content" id="head">
+                        <div class="wrap">
+                            <div class="wrap_float">
+                                <div class="top-info">
+                                    <p class="country">{{ travel.location }}</p>
+                                    <h1 class="tour_title">
+                                        {{ travel.caption }}
+
+                                      
+                                    </h1>
+
+                                </div>
+                                <div class="slider_wrap">
+                                    <div class="slider lightgallery" id="tour-head-slider">
+                                        <a href="/static/uploads/{{imgone.image }}" class="slide">
+                                            <img src="/static/uploads/{{imgone.image }}" alt>
+                                        </a>
+                                        <a href="/static/uploads/{{imgtwo.image }}" class="slide">
+                                            <img src="/static/uploads/{{imgtwo.image }}" alt>
+                                        </a>
+                                        <a href="/static/uploads/{{imgthr.image }}" class="slide">
+                                            <img src="/static/uploads/{{imgthr.image }}" alt>
+                                        </a>
+                                        <a href="/static/uploads/{{imgfour.image }}" class="slide">
+                                            <img src="/static/uploads/{{imgfour.image }}" alt>
+                                        </a>
+                                        <a href="/static/uploads/{{imgfive.image }}" class="slide">
+                                            <img src="/static/uploads/{{imgfive.image }}" alt>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bottom-info" >
+                                    <div class="bottom-info-left">
+
+                       
+
+
+                                    </div>
+                                    <div class="bottom-info-right">
+                                        <div class="info">
+                                            <div class="days">{{travel.duration}} |</div>
+                                            <div class="cost">from ${{travel.price}}</div>
+                                        </div>
+                                        <button class="btn button" >   <a href="https://api.whatsapp.com/send?phone=09128630668&text=Hello, I'm interested in the travel to {{travel.location}} with a price of {{travel.price}}." 
+                      >Book now</a
+                    >  </button>
+
+                                        <div class="rating">
+                                            <div class="rating-stars">
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star filled"></div>
+                                                <div class="star"></div>
+                                            </div>
+                                            <!-- <div class="rating-text">10 reviews</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                                <div class="tour_page_body" >
+                                            <div class="wrap">
+                                                <div class="wrap_float">
+                                                    <div class="content">
+                                                        <div class="overview content-block" id="overview">
+                                                            <h2 class="title">Overview</h2>
+                                                            <p class="description" >
+                                                          {{travel.description}}
+                                                            </p>
+
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div> 
+
+            </div>
+
+
+        </div>
+
+        <div class="footer">
+            <div class="wrap">
+                <div class="wrap_float">
+                    <div class="footer_top">
+                        <div class="left">
+                            <div class="col">
+                                <div class="_title m_title">Travel list</div>
+                                <ul>
+                                    {% for travel in travels %}
+                                    <li>
+                                        <a href="/travel/details/{{ travel.id }}">
+                                            {{travel.location}}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="_title">Contacts</div>
+                            <div class="contacts_info">
+                                <div class="tel">
+                                    <ul>
+
+                                        <li> <a href="tel:08169625345"> 08169625345</a> </li>
+                                        <li> <a href="tel:+905512693007"><span>905512693007</span></a> </li>
+                                        <li> <a href="tel:+97450848047"><span>97450848047</span></a> </li>
+                                    </ul>
+
+                                    <p>Round the clock support</p>
+                                </div>
+                                <div class="email">
+                                    <a href="mailto:labrinth.consults@gmail.com">labrinth.consults@gmail.com</a>
+                                    <p>For any questions</p>
+                                </div>
+                                <div class="address">
+                                    <ul>
+                                        <li>Prices and duration - Upon Request</li>
+                                        <li>Working hours - Mondays - Fridays ( 9am - 5pm)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="socials social-links">
+                  <a href="https://www.facebook.com/p/labrinthconsults-100064268880105/" class="link facebook"><span></span></a>
+                  <a href="https://instagram.com/labrinth.consults?igshid=NTc4MTIwNjQ2YQ==" class="link instagram"><span></span></a>
+                  <a href="https://www.linkedin.com/in/fadejimi-aborisade-84944099" class="link linkedin"><i class="fa fa-linkedin" style="font-size:48px;color:blue"></i></a>
+                  <a href="https://wa.me/08169625345" class="link whatsapp"><i class="fa fa-whatsapp" style="font-size:48px;color:green"></i></a>
+                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_bottom">
+                        <div class="right">Copyright © 2023 by Labrinth Group</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   
+
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/lightgallery.js"></script>
+        <script src="js/jquery.mousewheel.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/hammer.js"></script>
+        <script src="js/scripts.min.js"></script>
+
+
+        <script src="/static/js/jquery.min.js"></script>
+        <script src="/static/js/jquery-ui.min.js"></script>
+        <script src="/static/js/lightgallery.js"></script>
+        <script src="/static/js/jquery.mousewheel.min.js"></script>
+        <script src="/static/js/slick.min.js"></script>
+        <script src="/static/js/hammer.js"></script>
+        <script src="/static/js/scripts.min.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Labrinth Group</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Prata&amp;display=swap" rel="stylesheet" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/android-chrome-512x512.png" />
+    <link rel="icon" type="image/png" href="/static/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico" />
+    <meta name="msapplication-TileColor" content="#151515" />
+    <meta name="theme-color" content="#151515" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Labrinth Group - your go to travel agency." />
+    <meta name="keywords" content="labrinth group, keywords, travel, agency, usa, canada, visa, nigeria, ibadan, oyo, travel agency, vacation packages, adventure travel, holiday destinations, international tours, local attractions, tourist spots, group tours, family vacations, honeymoon destinations, luxury travel, affordable travel, flight booking, hotel reservations, travel tips, travel guide, sightseeing tours, cultural experiences, outdoor activities, best travel deals, travel blog, travel photography, travel inspiration, travel planning, travel resources" />
+
+    <meta name="author" content="Matthew Akinloye" />
+    <meta name="robots" content="index, follow" />
+
+  </head>
+
+  <body style="scroll-behavior: smooth;">
+    <div class="container">
+      <div class="top_panel">
+        <div class="wrap">
+          <div class="wrap_float">
+            <div class="left">
+              <a href="/" class="logo">
+                <img style="filter: invert(100%); height: 70px" src="/static/images/logo.png" alt />
+              </a>
+            </div>
+            <div class="menu_wrap" id="menu_wrap">
+              <div class="scroll">
+                <div class="center">
+                  <div class="menu">
+                    <ul>
+                      <li>
+                        <a href="/"><span>Home</span></a>
+                      </li>
+
+                      <li>
+                        <a href="#contact-us"><span>Contact us</span></a>
+                      </li>
+                    </ul>
+                    <div class="mobile_content">
+                      <div class="tel">
+                        <a href="tel:08169625345"> 08169625345</a>
+                        <a href="tel:+905512693007"><span>905512693007</span></a>
+                        <a href="tel:+97450848047"><span>97450848047</span></a>
+                        <p>Round the clock support</p>
+                      </div>
+                      <div class="social">
+                        <a href="https://www.facebook.com/p/labrinthconsults-100064268880105/"
+                          class="link facebook"><span></span></a>
+                        <a href="https://instagram.com/labrinth.consults?igshid=NTc4MTIwNjQ2YQ=="
+                          class="link instagram"><span></span></a>
+                        <a href="https://www.linkedin.com/in/fadejimi-aborisade-84944099" class="link linkedin"><i
+                            class="fa fa-linkedin" style="font-size:48px;color:blue"></i></a>
+                        <a href="https://wa.me/08169625345" class="link whatsapp"><i class="fa fa-whatsapp"
+                            style="font-size:48px;color:green"></i></a>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="close" id="menu-close">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="tel">
+                    <a href="tel:08169625345"><span>08169625345</span></a>
+                  </div>
+                  <div class="tel">
+                    <a href="tel:+905512693007"><span>+905512693007</span></a>
+                  </div>
+                  <div class="tel">
+                    <a href="tel:+97450848047"><span>+97450848047</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mobile_btn" id="mobile_btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main_slider js_height">
+        <div class="slider_wrap" id="main_slider_wrap">
+
+          {% for travel in travels %}
+          <div class="slide">
+            <div class="bg-img" style="background-image: url(/static/uploads/{{travel.image }} )"></div>
+            <div class="wrap">
+              <div class="wrap_float js_height">
+                <div class="slide_content">
+                  <div class="title_wrap">
+                    <p class="country">{{travel.location}}</p>
+                    <h2 class="slide_title">{{travel.caption}}</h2>
+                  </div>
+                  <p class="text">
+                    {{travel.description}}
+                  </p>
+                  <div class="buttons">
+                    <a href="https://api.whatsapp.com/send?phone=09128630668&text=Hello, I'm interested in the travel to {{travel.location}} with a price of {{travel.price}}."
+                      class="btn button">Book now</a>
+                    <a href="#travel" class="link"><span>Choose tour</span></a>
+                  </div>
+                  <div class="next_title">{{travel.location}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+
+        </div>
+        <div class="arrows">
+          <div class="arrow prev"></div>
+          <div class="arrow next"></div>
+        </div>
+      </div>
+      <div class="most_popular">
+        <div class="wrap">
+          <div class="wrap_float">
+            <div class="title_wrap">
+              <h2 class="title">Most Popular Tours</h2>
+              <p class="subtitle">Most visited locations</p>
+              <div class="controls">
+                <a href="#travel" class="link">View All Tours</a>
+                <div class="arrows">
+                  <div class="arrow prev"></div>
+                  <div class="arrow next"></div>
+                </div>
+              </div>
+            </div>
+            <div class="section_content">
+              <div class="tour-slider" id="tour-slider">
+                {% for travel in travels %}
+                <a href="/travel/details/{{ travel.id }}" class="tour_item"
+                  style="background-image: url(/static/uploads/{{travel.image }} )">
+                  <div class="tour_item_top">
+                    <p class="country">
+                      <span>{{travel.location}}</span>
+                    </p>
+                    <!-- <div class="add_bookmark fav-button">
+                                       <i class="is-added bouncy"></i>
+                                       <i class="not-added bouncy"></i>
+                                       <span class="fav-overlay"></span>
+                                   </div> -->
+                  </div>
+                  <div class="tour_item_bottom">
+                    <h3 class="_title">{{travel.caption}}</h3>
+                    <div class="_info">
+                      <div class="_info_left">
+                        <div class="days">{{travel.duration}} |</div>
+                        <div class="cost">from ${{travel.price}}</div>
+                      </div>
+                      <!-- <div class="_info_right">
+                                           <div class="rating-stars">
+                                               <div class="star filled"></div>
+                                               <div class="star filled"></div>
+                                               <div class="star filled"></div>
+                                               <div class="star"></div>
+                                               <div class="star"></div>
+                                           </div>
+                                           <p class="rating-text">10 reviews</p>
+                                       </div> -->
+                    </div>
+                  </div>
+                  <div class="shadow js-shadow"></div>
+                </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="destinations" id="travel">
+        <div class="wrap">
+          <div class="wrap_float">
+            <div class="title_wrap">
+              <h2 class="title">Top Destinations</h2>
+              <p class="subtitle">
+                This is the most popular destination in the last month
+              </p>
+              <div class="controls">
+                <a href="#travel" class="link">View All Destinations</a>
+              </div>
+            </div>
+            <div class="section_content">
+              <div class="scroll">
+                {% for travel in travels %}
+
+                <a href="/travel/details/{{ travel.id }}" class="destinations_item"
+                  style="background-image: url(/static/uploads/{{travel.image }} )">
+                  <div class="sq_parent">
+                    <div class="sq_wrap">
+                      <div class="sq_content">
+                        <div class="_content">
+                          <h3 class="_title">{{travel.location}}</h3>
+                          <p class="_info">
+                            {{travel.duration}} | ${{travel.price}}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="shadow js-shadow"></div>
+                </a>
+
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subscribe_section" id="contact-us">
+        <div class="wrap">
+          <div class="wrap_float">
+            <div class="subscribe_block" style="background-image: url(images/subscribe-bg.jpg)">
+              <div class="left">
+                <h2 class="_title">Contact Us</h2>
+                <p class="_subtitle">Sign up to receive the best offers</p>
+              </div>
+              <div class="right">
+                <div class="input_wrap">
+                  <input type="text" class="input" placeholder="Write us a message" />
+                </div>
+                <div class="input_wrap">
+                  <input type="email" class="input" placeholder="Email" />
+                </div>
+                <button class="submit button"><span>Submit</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="wrap">
+          <div class="wrap_float">
+            <div class="footer_top">
+              <div class="left">
+                <div class="col">
+                  <div class="_title m_title">Travel list</div>
+                  <ul>
+                    {% for travel in travels %}
+                    <li>
+                      <a href="/travel/details/{{ travel.id }}">
+                        {{travel.location}}
+                      </a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+              <div class="right">
+                <div class="_title" id="contact_us">Contacts</div>
+                <div class="contacts_info">
+                  <div class="tel">
+                    <ul>
+
+                      <li> <a href="tel:08169625345"> 08169625345</a> </li>
+                      <li> <a href="tel:+905512693007"><span>905512693007</span></a> </li>
+                      <li> <a href="tel:+97450848047"><span>97450848047</span></a> </li>
+                    </ul>
+
+                    <p>Round the clock support</p>
+                  </div>
+                  <div class="email">
+                    <a href="mailto:labrinth.consults@gmail.com">labrinth.consults@gmail.com</a>
+                    <p>For any questions</p>
+                  </div>
+                  <div class="address">
+                    <ul>
+                      <li>Prices and duration - Upon Request</li>
+                      <li>Working hours - Mondays - Fridays ( 9am - 5pm)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="socials social-links">
+                  <a href="https://www.facebook.com/p/labrinthconsults-100064268880105/"
+                    class="link facebook"><span></span></a>
+                  <a href="https://instagram.com/labrinth.consults?igshid=NTc4MTIwNjQ2YQ=="
+                    class="link instagram"><span></span></a>
+                  <a href="https://www.linkedin.com/in/fadejimi-aborisade-84944099" class="link linkedin"><i
+                      class="fa fa-linkedin" style="font-size:48px;color:blue"></i></a>
+                  <a href="https://wa.me/08169625345" class="link whatsapp"><i class="fa fa-whatsapp"
+                      style="font-size:48px;color:green"></i></a>
+
+                </div>
+              </div>
+            </div>
+            <div class="footer_bottom">
+              <div class="right">Copyright © 2023 by Labrinth Group</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <script src="/static/js/lightgallery.js"></script>
+    <script src="/static/js/jquery.mousewheel.min.js"></script>
+    <script src="/static/js/slick.min.js"></script>
+    <script src="/static/js/hammer.js"></script>
+    <script src="/static/js/scripts.min.js"></script>
+  </body>
+
+</html>
