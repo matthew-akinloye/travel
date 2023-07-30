@@ -56,7 +56,32 @@
       <!-- Spinner End -->
 
       <!-- Sidebar Start -->
-      <div class="sidebar pe-4 pb-3"></div>
+      <div class="sidebar pe-4 pb-3">
+                     </div>
+                                {% with messages = get_flashed_messages() %}
+                                {%if messages %}
+                                {% for message in messages %}
+                                <b> {{message|safe}}</b>
+                                {% endfor %}
+                                {% else %}
+                                <b></b>
+                                {% endif %}
+                                {% endwith %}
+                        </div>
+                        <h1>
+                                  </div>
+                                {% with messages = get_flashed_messages() %}
+                                {%if messages %}
+                                {% for message in messages %}
+                                <b> {{message|safe}}</b>
+                                {% endfor %}
+                                {% else %}
+                                <b></b>
+                                {% endif %}
+                                {% endwith %}
+                        </div>
+                        </h1>
+      </div>
       <!-- Sidebar End -->
 
       <!-- Content Start -->

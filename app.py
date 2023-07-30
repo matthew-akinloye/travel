@@ -12,6 +12,11 @@ from flask_babel import Babel
 
 
 
+from flask_login import LoginManager, login_user, login_required, logout_user
+
+
+
+
 
 
 app = Flask(__name__)
@@ -23,6 +28,14 @@ app.config['BASIC_AUTH_PASSWORD'] = 'nimda1234'
 app.config['BABEL_SUPPORTED_LOCALES'] = ['en', 'fr']
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'signin'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 
 
@@ -41,31 +54,31 @@ migrate = Migrate(app, db)
 
 
 # Import your models
-from models import Travel
+from models import Travel, User
 
 
 # Create an instance of the Admin class
-admin = Admin(app, name='Admin', template_mode='bootstrap3')
+# admin = Admin(app, name='Admin', template_mode='bootstrap3')
 
 
 
-class TravelView(ModelView):
-    column_editable_list = ['id']
-    column_searchable_list = ['location', 'created']
-    column_filters = ['created']
-    column_hide_backrefs = False
+# class TravelView(ModelView):
+#     column_editable_list = ['id']
+#     column_searchable_list = ['location', 'created']
+#     column_filters = ['created']
+#     column_hide_backrefs = False
     
 
-class AdminModelView(ModelView):
-    column_editable_list = ['location']
-    column_exclude_list = ['Created']
-    column_display_pk = True
-    column_searchable_list = ['travel.location', 'status']
-    column_filters = ['status', 'created']
-    column_labels = {'travel.location': 'travel Name'}
-    form_args = {'travel_id': {'coerce': int}}
+# class AdminModelView(ModelView):
+#     column_editable_list = ['location']
+#     column_exclude_list = ['Created']
+#     column_display_pk = True
+#     column_searchable_list = ['travel.location', 'status']
+#     column_filters = ['status', 'created']
+#     column_labels = {'travel.location': 'travel Name'}
+#     form_args = {'travel_id': {'coerce': int}}
 
-admin.add_view(TravelView(Travel,db.session))
+# admin.add_view(TravelView(Travel,db.session))
 
 
 # Import the routes and models modules

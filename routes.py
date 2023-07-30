@@ -1,12 +1,26 @@
 
+import hashlib
 import os
 from app import app, db
-from flask import render_template, redirect, request, url_for, send_from_directory,flash
-from models import Travel, Imageone, Imagetwo, Imagethr, Imagefour, Imagefive
+from flask import render_template, redirect, request, session, url_for, send_from_directory,flash
+from models import Travel, Imageone, Imagetwo, Imagethr, Imagefour, Imagefive, User
 
 
 from urllib.parse import urlencode
 from werkzeug.utils import secure_filename
+
+
+from flask_login import LoginManager, login_user, logout_user
+
+from datetime import datetime, timedelta
+
+from flask_login import login_required
+
+@app.route('/protected')
+@login_required
+def protected():
+    # Your protected view logic
+    return 'Protected view'
 
 
 @app.route('/travel/contact/whatsapp/<int:travel_id>')
@@ -44,6 +58,7 @@ def homea():
 
 
 @app.route('/admin')
+@login_required
 def admin():
     travels = Travel.query.all()
     imgone = Imageone.query.all()
@@ -51,12 +66,14 @@ def admin():
     imgthr = Imagethr.query.all()
     imgfour = Imagefour.query.all()
     imgfive = Imagefive.query.all()
-    return render_template('admin.html', travels=travels, imgone=imgone,imgtwo=imgtwo, imgthr=imgthr, imgfour=imgfour, imgfive=imgfive)
+    user = User.query.all()
+    return render_template('admin.html',user=user, travels=travels, imgone=imgone,imgtwo=imgtwo, imgthr=imgthr, imgfour=imgfour, imgfive=imgfive)
 
 
 
 
 @app.route('/admin/add', methods=['GET', 'POST'])
+@login_required
 def add_travel():
     travels = Travel.query.all()
     imgone = Imageone.query.all()
@@ -116,14 +133,15 @@ def add_travel():
         travel.imagefive.append(image_five)
 
         db.session.commit()
-
-        return redirect(url_for('admin'))
+        flash("Travel Record added successfully")
+        return redirect(url_for('add_travel'))
     
     return render_template('add_travel.html', travels=travels, imgone=imgone,imgtwo=imgtwo, imgthr=imgthr, imgfour=imgfour, imgfive=imgfive)
 
 
 
 @app.route('/admin/edit/<int:travel_id>', methods=['GET', 'POST'])
+@login_required
 def edit_travel(travel_id):
     travel = Travel.query.get_or_404(travel_id)
 
@@ -141,12 +159,13 @@ def edit_travel(travel_id):
         travel.caption = request.form['caption']
         
         db.session.commit()
-        
+        flash("Travel Record edited successfully")
         return redirect(url_for('admin'))
     
     return render_template('edit_travel.html', travel=travel)
 
 @app.route('/admin/delete/<int:travel_id>', methods=['POST'])
+@login_required
 def delete_travel(travel_id):
     travel = Travel.query.get_or_404(travel_id)
     imgone = Imageone.query.get_or_404(travel_id)
@@ -163,7 +182,7 @@ def delete_travel(travel_id):
     db.session.delete(imgfive)
     
     db.session.commit()
-    
+    flash("Travel Record deleted successfully")
     return redirect(url_for('admin'))
 
 
@@ -188,5 +207,30 @@ def travel_details(travel_id):
 
 
 @app.route('/uploads/<filename>')
+@login_required
 def view_file(filename):
     return send_from_directory('static/uploads', filename)
+
+
+@app.route('/signin', methods=['GET', 'POST'])
+def signin():
+    if request.method == 'GET':
+        return render_template("signin.html")
+    else:
+        email = request.form['email']
+        password = request.form['password']
+        user = User.query.filter_by(email=email).first()
+        p_hash = hashlib.sha256(password.encode()).hexdigest()
+        if user is not None and user.password_hash == hashlib.sha256(password.encode()).hexdigest():
+            login_user(user)
+            flash("Welcome to your admin dashboard!")
+            session['email'] = email
+            session['p_hash'] = p_hash
+                # set cookies
+            resp = redirect(url_for('admin'))
+            resp.set_cookie('id', str(user.id), max_age=timedelta (hours=24))
+            resp.set_cookie('p_hash', p_hash, max_age=timedelta(hours=24))
+            return resp
+        else:
+            flash("Invalid login details")
+            return render_template('signin.html')

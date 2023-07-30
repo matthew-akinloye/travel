@@ -1,6 +1,16 @@
 from app import db
 from datetime import datetime
+from flask_login import UserMixin
 
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True, index=True)
+    fullname = db.Column(db.String(50), nullable=False, default = 'Fadejimi')
+    email = db.Column(db.String(200), unique=True, nullable=False, default='admin@admin.com')
+    password_hash = db.Column(db.String(200), nullable=False, default='pwd@admin@admin.com')
+    created = db.Column(db.DateTime, default=datetime.now())
+
+    def __repr__(self) -> str:
+        return "<User: {}>".format(self.fullname)
 
 class Travel(db.Model):
     id = db.Column(db.Integer, primary_key=True, index=True)

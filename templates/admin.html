@@ -62,6 +62,17 @@
           <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
               <h6 class="mb-0">Location list</h6>
+                           </div>
+                                {% with messages = get_flashed_messages() %}
+                                {%if messages %}
+                                {% for message in messages %}
+                                <b> {{message|safe}}</b>
+                                {% endfor %}
+                                {% else %}
+                                <b></b>
+                                {% endif %}
+                                {% endwith %}
+                        </div>
             </div>
             <div class="table-responsive">
               <table
