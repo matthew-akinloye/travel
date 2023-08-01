@@ -3,6 +3,7 @@ from datetime import datetime
 from flask_login import UserMixin
 
 class User(UserMixin, db.Model):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True, index=True)
     fullname = db.Column(db.String(50), nullable=False, default = 'Fadejimi')
     email = db.Column(db.String(200), unique=True, nullable=False, default='admin@admin.com')
@@ -13,6 +14,7 @@ class User(UserMixin, db.Model):
         return "<User: {}>".format(self.fullname)
 
 class Travel(db.Model):
+    __tablename__ = 'travel'
     id = db.Column(db.Integer, primary_key=True, index=True)
     location = db.Column(db.String(50), nullable=False)
     price = db.Column(db.String(200), nullable=False)
@@ -29,6 +31,7 @@ class Travel(db.Model):
 
 
 class Imageone(db.Model):
+    __tablename__ = 'imageone'
     id = db.Column(db.Integer, primary_key=True, index=True)
     location = db.Column(db.String(50), nullable=False)
     image = db.Column(db.String(200), nullable=False)
@@ -42,6 +45,7 @@ class Imageone(db.Model):
 
 
 class Imagetwo(db.Model):
+    __tablename__ = 'imagetwo'
     id = db.Column(db.Integer, primary_key=True, index=True)
     location = db.Column(db.String(50), nullable=False)
     image = db.Column(db.String(200), nullable=False)
@@ -55,6 +59,7 @@ class Imagetwo(db.Model):
 
 
 class Imagethr(db.Model):
+    __tablename__ = 'imagethr'
     id = db.Column(db.Integer, primary_key=True, index=True)
     location = db.Column(db.String(50), nullable=False)
     image = db.Column(db.String(200), nullable=False)
@@ -68,6 +73,7 @@ class Imagethr(db.Model):
 
 
 class Imagefour(db.Model):
+    __tablename__ = 'imagefour'
     id = db.Column(db.Integer, primary_key=True, index=True)
     location = db.Column(db.String(50), nullable=False)
     image = db.Column(db.String(200), nullable=False)
@@ -81,6 +87,7 @@ class Imagefour(db.Model):
 
 
 class Imagefive(db.Model):
+    __tablename__ = 'imagefive'
     id = db.Column(db.Integer, primary_key=True, index=True)
     location = db.Column(db.String(50), nullable=False)
     image = db.Column(db.String(200), nullable=False)

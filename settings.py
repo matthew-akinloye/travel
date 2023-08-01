@@ -1,0 +1,7 @@
+POSTGRES_URL="postgres://default:sMjv1FmZ6Dnr@ep-falling-mouse-40250356-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+POSTGRES_PRISMA_URL="postgres://default:sMjv1FmZ6Dnr@ep-falling-mouse-40250356-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"
+POSTGRES_URL_NON_POOLING="postgres://default:sMjv1FmZ6Dnr@ep-falling-mouse-40250356.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+POSTGRES_USER="default"
+POSTGRES_HOST="ep-falling-mouse-40250356-pooler.us-east-1.postgres.vercel-storage.com"
+POSTGRES_PASSWORD="sMjv1FmZ6Dnr"
+POSTGRES_DATABASE="verceldb"

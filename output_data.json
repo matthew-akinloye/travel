@@ -1,0 +1,73 @@
+{
+    "alembic_version": [
+        {
+            "version_num": "0990856b33f7"
+        }
+    ],
+    "travel": [
+        {
+            "id": 1,
+            "location": "Nigeria",
+            "price": "10090",
+            "duration": "5 days",
+            "description": "Pride of africa",
+            "caption": "Pride of africa",
+            "image": "gallery-1.jpg",
+            "created": "2023-08-01 13:27:32.104044"
+        }
+    ],
+    "user": [
+        {
+            "id": 1,
+            "fullname": "Fadejimi",
+            "email": "admin@admin.com",
+            "password_hash": "29846687a1a01b43ffa22b93cc26fdfb886948343624260d986aa362746df69c",
+            "created": "2023-07-30 22:07:57.405665"
+        }
+    ],
+    "imagefive": [
+        {
+            "id": 1,
+            "location": "Nigeria",
+            "image": "gallery-6.jpg",
+            "created": "2023-08-01 13:27:32.115350",
+            "travel_id": 1
+        }
+    ],
+    "imagefour": [
+        {
+            "id": 1,
+            "location": "Nigeria",
+            "image": "gallery-5.jpg",
+            "created": "2023-08-01 13:27:32.114077",
+            "travel_id": 1
+        }
+    ],
+    "imageone": [
+        {
+            "id": 1,
+            "location": "Nigeria",
+            "image": "gallery-2.jpg",
+            "created": "2023-08-01 13:27:32.108392",
+            "travel_id": 1
+        }
+    ],
+    "imagethr": [
+        {
+            "id": 1,
+            "location": "Nigeria",
+            "image": "gallery-4.jpg",
+            "created": "2023-08-01 13:27:32.112517",
+            "travel_id": 1
+        }
+    ],
+    "imagetwo": [
+        {
+            "id": 1,
+            "location": "Nigeria",
+            "image": "gallery-3.jpg",
+            "created": "2023-08-01 13:27:32.110957",
+            "travel_id": 1
+        }
+    ]
+}

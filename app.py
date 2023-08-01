@@ -54,7 +54,7 @@ migrate = Migrate(app, db)
 
 
 # Import your models
-from models import Travel, User
+from models import Travel, User, Imageone, Imagetwo, Imagethr, Imagefour, Imagefive
 
 
 # Create an instance of the Admin class
